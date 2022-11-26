@@ -1,6 +1,9 @@
 #include "ModelMakerComponent.h"
 #include "RemoveComponent.h"
 #include "RigidBodyComponent.h"
+#include "CollisionComponent.h"
+#include "SpotLightComponent.h"
+#include "PositionLightComponent.h"
 
 #define VERBOSE true
 
@@ -46,8 +49,28 @@ void ModelMakerComponent::processInput()
 		gameObject->addChildGameObject(emptyGameObject);
 		emptyGameObject->setRotation(glm::rotate(PI, UNIT_Y_V3), LOCAL);
 
+		
+		GameObject* emptyGameObject1 = new GameObject();
+		emptyGameObject->addChildGameObject(emptyGameObject1);
+		emptyGameObject1->setRotation(glm::rotate(PI, UNIT_Z_V3), LOCAL);
+
+
+
+		
+		// SpotLightComponent* splc = new SpotLightComponent(GLFW_KEY_S);
+		// splc->setAmbientColor(vec4(0.15f, 0.15f, 0.15f, 1.0f));
+		// splc->setDiffuseColor(vec4(1.0f, 1.0f, 1.0f, 1.0f));
+		// splc->setSpecularColor(vec4(1.0f, 1.0f, 1.0f, 1.0f));
+		// splc->setEnable(true);
+		// splc->setCutoffAngleInDegrees(60.0f);
+		// emptyGameObject1->addComponent(splc);
+
+
+		emptyGameObject->addComponent(new CollisionComponent());
+
 		ModelMeshComponent* model = new ModelMeshComponent(this->pathAndFileName, this->shaderProgram);
 		emptyGameObject->addComponent(model);
+
 		RigidBodyComponent* rgb = new RigidBodyComponent(model, DYNAMIC);
 
 		emptyGameObject->addComponent(rgb);

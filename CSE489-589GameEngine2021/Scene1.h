@@ -48,7 +48,7 @@ class Scene1 : public Game
 		cam->setViewPort(0.0f, 0.0f, 1.0f, 1.0f);
 		cameraObject->addComponent(cam);
 
-		cameraObject->addComponent(new ModelMakerComponent(shaderProgram, "Assets/Rifles/Rifle1/rifle1.obj"));
+		cameraObject->addComponent(new ModelMakerComponent(shaderProgram, "Assets/Rifles/RifleFire/rifleFire.obj"));
 
 		// ****** Falling Dinosaurs  *********
 
