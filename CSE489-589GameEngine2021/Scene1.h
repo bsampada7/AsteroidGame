@@ -48,7 +48,7 @@ class Scene1 : public Game
 		cam->setViewPort(0.0f, 0.0f, 1.0f, 1.0f);
 		cameraObject->addComponent(cam);
 
-		cameraObject->addComponent(new ModelMakerComponent(shaderProgram, "Assets/Dinosaur/Trex.obj"));
+		cameraObject->addComponent(new ModelMakerComponent(shaderProgram, "Assets/Rifles/Rifle1/rifle1.obj"));
 
 		// ****** Falling Dinosaurs  *********
 
@@ -56,7 +56,7 @@ class Scene1 : public Game
 
 			GameObject* dinoObject = new GameObject();
 			this->addChildGameObject(dinoObject);
-			ModelMeshComponent* dino = new ModelMeshComponent("Assets/Dinosaur/Trex.obj", shaderProgram);
+			ModelMeshComponent* dino = new ModelMeshComponent("Assets/Asteroids/Asteroid2/10464_Asteroid_v1_Iterations-2-3x.obj", shaderProgram);
 			dinoObject->addComponent(dino);
 			dinoObject->setPosition(vec3(rand() % 3 - 1.5f, 150.0f + rand() % 50 - 25.0f, rand() % 3 - 1.5f -85.0f), WORLD);
 			dinoObject->addComponent(new RemoveComponent(15.0f));
