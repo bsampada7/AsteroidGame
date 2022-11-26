@@ -23,12 +23,12 @@ protected:
 
 	std::vector<string> faces
 	{
-		"Assets/Cube Map/right.jpg",
-		"Assets/Cube Map/left.jpg",
-		"Assets/Cube Map/top.jpg",
-		"Assets/Cube Map/bottom.jpg",
-		"Assets/Cube Map/back.jpg",
-		"Assets/Cube Map/front.jpg"
+		"Assets/Cube Map/space1/px.jpg",
+		"Assets/Cube Map/space1/nx.jpg",
+		"Assets/Cube Map/space1/py.jpg",
+		"Assets/Cube Map/space1/ny.jpg",
+		"Assets/Cube Map/space1/nz.jpg",
+		"Assets/Cube Map/space1/pz.jpg"
 	};
 
 	GLuint skyboxTexture = 0;
